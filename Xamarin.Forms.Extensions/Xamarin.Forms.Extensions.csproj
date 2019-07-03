@@ -5,10 +5,14 @@
     <RootNamespace>Xamarin.Forms</RootNamespace>
     <Version>1.0.0-alpha.0</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Authors>mardsystems</Authors>
+    <Authors>Marcelo Dias</Authors>
     <RepositoryUrl>https://github.com/mardsystems/Extensions</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageId>Mardsystems.Xamarin.Forms.Extensions</PackageId>
+    <PackageId>Mardsystems.Xamarin.Extensions</PackageId>
+    <Product>Xamarin.Extensions</Product>
+    <Company></Company>
+    <Description>Extensions for "Xamarin" namespaces.</Description>
+    <PackageTags>Xamarin,Forms,Extensions</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

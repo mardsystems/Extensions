@@ -3,12 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>System</RootNamespace>
-    <Authors>mardsystems</Authors>
+    <Authors>Marcelo Dias</Authors>
     <Product>System.Extensions</Product>
     <Version>1.0.0-alpha.0</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageId>Mardsystems.System.Extensions</PackageId>
+    <PackageId>Mardsystems.Extensions</PackageId>
     <RepositoryUrl>https://github.com/mardsystems/Extensions</RepositoryUrl>
+    <Description>Extensions for "System" namespaces.</Description>
+    <PackageTags>System,Extensions</PackageTags>
+    <Company />
   </PropertyGroup>
 
   <ItemGroup>
