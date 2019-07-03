@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Xamarin.Forms</RootNamespace>
+    <Version>1.0.0-alpha.0</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>mardsystems</Authors>
+    <RepositoryUrl>https://github.com/mardsystems/Extensions</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageId>Mardsystems.Xamarin.Forms.Extensions</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Converters\MenuItemTypeConverter.cs" />
+    <Compile Remove="Converters\NotificationTypeToIconConverter.cs" />
+    <Compile Remove="Converters\NotificationTypeToTitleConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\System.Extensions\System.Extensions.csproj" />
+  </ItemGroup>
+
+</Project>
