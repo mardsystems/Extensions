@@ -8,10 +8,10 @@
     <Authors>Marcelo Dias</Authors>
     <RepositoryUrl>https://github.com/mardsystems/Extensions</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageId>Mardsystems.Xamarin.Extensions</PackageId>
-    <Product>Xamarin.Extensions</Product>
+    <PackageId>Mardsystems.Xamarin.Forms</PackageId>
+    <Product>Xamarin.Forms.Extensions</Product>
     <Company></Company>
-    <Description>Extensions for "Xamarin" namespaces.</Description>
+    <Description>Extensions for "Xamarin.Forms" assembly.</Description>
     <PackageTags>Xamarin,Forms,Extensions</PackageTags>
   </PropertyGroup>
 
