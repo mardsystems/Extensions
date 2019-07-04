@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Xamarin.Forms</RootNamespace>
-    <Version>1.0.0-alpha.0</Version>
+    <Version>1.0.0-alpha.1</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Marcelo Dias</Authors>
     <RepositoryUrl>https://github.com/mardsystems/Extensions</RepositoryUrl>
@@ -11,7 +11,7 @@
     <PackageId>Mardsystems.Xamarin.Forms</PackageId>
     <Product>Xamarin.Forms.Extensions</Product>
     <Company></Company>
-    <Description>Extensions for "Xamarin.Forms" assembly.</Description>
+    <Description>Extensions for the "Xamarin.Forms" package.</Description>
     <PackageTags>Xamarin,Forms,Extensions</PackageTags>
   </PropertyGroup>
 

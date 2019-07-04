@@ -9,7 +9,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageId>Mardsystems.Extensions</PackageId>
     <RepositoryUrl>https://github.com/mardsystems/Extensions</RepositoryUrl>
-    <Description>Extensions for "System" namespaces.</Description>
+    <Description>Extensions for the "System" namespaces.</Description>
     <PackageTags>System,Extensions</PackageTags>
     <Company />
   </PropertyGroup>
