@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System.DomainModel
+namespace System.IO
 {
-    public abstract class Entity : ObservableObject
+    public interface IFileHelper
     {
-
+        string GetLocalFilePath(string filename);
     }
 }

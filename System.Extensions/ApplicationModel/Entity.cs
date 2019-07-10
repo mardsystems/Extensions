@@ -1,33 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System.DomainModel
+namespace System.ApplicationModel
 {
-    public abstract class AggregateRoot : Entity
+    public abstract class Entity : ObservableObject
     {
-        public Guid Id { get; private set; }
-
-        public string UserId { get; private set; }
-
-        public AggregateRoot(Guid id, string userId)
-        {
-            Id = id;
-
-            UserId = userId;
-        }
-
-        protected AggregateRoot()
-        {
-
-        }
-
         /// <summary>
         /// Id for item
         /// </summary>
-        //public string Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Azure created at time stamp

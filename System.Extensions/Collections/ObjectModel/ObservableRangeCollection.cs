@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 
@@ -31,10 +32,10 @@ namespace System.Collections.ObjectModel
         }
         public void Add(T item, NotifyCollectionChangedAction notificationMode = NotifyCollectionChangedAction.Add)
         {
-            //if (item == null)
-            //{
-            //    throw new ArgumentNullException("item");
-            //}
+            if (item == null)
+            {
+                throw new ArgumentNullException("item");
+            }
 
             CheckReentrancy();
 
@@ -47,19 +48,19 @@ namespace System.Collections.ObjectModel
                 OnPropertyChanged(new PropertyChangedEventArgs("Item[]"));
 
                 OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+
+                return;
             }
-            else
-            {
-                int startIndex = Count;
 
-                Items.Add(item);
+            int startIndex = Count;
 
-                OnPropertyChanged(new PropertyChangedEventArgs("Count"));
+            Items.Add(item);
 
-                OnPropertyChanged(new PropertyChangedEventArgs("Item[]"));
+            OnPropertyChanged(new PropertyChangedEventArgs("Count"));
 
-                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
-            }
+            OnPropertyChanged(new PropertyChangedEventArgs("Item[]"));
+
+            //OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
         }
 
         /// <summary> 
@@ -67,10 +68,10 @@ namespace System.Collections.ObjectModel
         /// </summary> 
         public void AddRange(IEnumerable<T> collection, NotifyCollectionChangedAction notificationMode = NotifyCollectionChangedAction.Add)
         {
-            //if (collection == null)
-            //{
-            //    throw new ArgumentNullException("collection");
-            //}
+            if (collection == null)
+            {
+                throw new ArgumentNullException("collection");
+            }
 
             CheckReentrancy();
 
@@ -86,24 +87,24 @@ namespace System.Collections.ObjectModel
                 OnPropertyChanged(new PropertyChangedEventArgs("Item[]"));
 
                 OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+
+                return;
             }
-            else
+
+            int startIndex = Count;
+
+            var changedItems = collection is List<T> ? (List<T>)collection : new List<T>(collection);
+
+            foreach (var i in changedItems)
             {
-                int startIndex = Count;
-
-                var changedItems = collection is List<T> ? (List<T>)collection : new List<T>(collection);
-
-                foreach (var i in changedItems)
-                {
-                    Items.Add(i);
-                }
-
-                OnPropertyChanged(new PropertyChangedEventArgs("Count"));
-
-                OnPropertyChanged(new PropertyChangedEventArgs("Item[]"));
-
-                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, changedItems, startIndex));
+                Items.Add(i);
             }
+
+            OnPropertyChanged(new PropertyChangedEventArgs("Count"));
+
+            OnPropertyChanged(new PropertyChangedEventArgs("Item[]"));
+
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, changedItems, startIndex));
         }
 
         /// <summary> 
@@ -111,10 +112,10 @@ namespace System.Collections.ObjectModel
         /// </summary> 
         public void RemoveRange(IEnumerable<T> collection)
         {
-            //if (collection == null)
-            //{
-            //    throw new ArgumentNullException("collection");
-            //}
+            if (collection == null)
+            {
+                throw new ArgumentNullException("collection");
+            }
 
             foreach (var i in collection)
             {
@@ -137,10 +138,10 @@ namespace System.Collections.ObjectModel
         /// </summary> 
         public void ReplaceRange(IEnumerable<T> collection)
         {
-            //if (collection == null)
-            //{
-            //    throw new ArgumentNullException("collection");
-            //}
+            if (collection == null)
+            {
+                throw new ArgumentNullException("collection");
+            }
 
             Items.Clear();
 

@@ -5,11 +5,12 @@
     <RootNamespace>Xamarin.Essentials</RootNamespace>
     <Description>Extensions for the "Xamarin.Essentials" package.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0.0-alpha.1</Version>
-    <PackageId>Mardsystems.Xamarin.Essentials</PackageId>
+    <Version>1.0.0-alpha.0</Version>
+    <PackageId>Mardsystems.Essentials.Extensions</PackageId>
     <Authors>Marcelo Dias</Authors>
     <RepositoryUrl>https://github.com/mardsystems/Extensions</RepositoryUrl>
     <PackageTags>XamarinEssentials,Extensions</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

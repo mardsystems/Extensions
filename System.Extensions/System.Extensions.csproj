@@ -5,13 +5,14 @@
     <RootNamespace>System</RootNamespace>
     <Authors>Marcelo Dias</Authors>
     <Product>System.Extensions</Product>
-    <Version>1.0.0-alpha.3</Version>
+    <Version>1.0.0-alpha.4</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageId>Mardsystems.Extensions</PackageId>
     <RepositoryUrl>https://github.com/mardsystems/Extensions</RepositoryUrl>
     <Description>Extensions for the "System" namespaces.</Description>
     <PackageTags>System,Extensions</PackageTags>
     <Company />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
