@@ -25,7 +25,7 @@ namespace System.Db
             //relatedItems = 
         }
 
-        public TEntity Find(Guid id)
+        public TEntity Find(string id)
         {
             var item = items.FirstOrDefault(s => s.Id == id);
 

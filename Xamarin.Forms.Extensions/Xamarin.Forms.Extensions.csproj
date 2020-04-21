@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>Xamarin.Forms</RootNamespace>
-    <Version>1.0.0-alpha.0</Version>
+    <Version>1.0.0-alpha.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Marcelo Dias</Authors>
     <RepositoryUrl>https://github.com/mardsystems/Extensions</RepositoryUrl>

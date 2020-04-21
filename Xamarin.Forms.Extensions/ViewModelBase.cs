@@ -1,28 +1,27 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace Xamarin.Forms
 {
-    public abstract class ViewModelBase : ExtendedBindableObject, IExceptionHandler
+    public abstract class ViewModelBase : MvvmHelpers.BaseViewModel, IExceptionHandler
     {
         //protected readonly IViewModelNavigation navigation;
 
-        bool isBusy = false;
+        //bool isBusy = false;
 
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
-        }
+        //public bool IsBusy
+        //{
+        //    get { return isBusy; }
+        //    set { SetProperty(ref isBusy, value); }
+        //}
 
-        string title = string.Empty;
+        //string title = string.Empty;
 
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
+        //public string Title
+        //{
+        //    get { return title; }
+        //    set { SetProperty(ref title, value); }
+        //}
 
         Color backgrounColor = Color.White;
 

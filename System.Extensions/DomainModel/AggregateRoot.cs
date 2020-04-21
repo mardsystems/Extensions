@@ -1,47 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace System.DomainModel
 {
     public abstract class AggregateRoot : Entity
     {
-        public Guid Id { get; private set; }
+
+        public string Id { get; internal protected set; }
 
         public string UserId { get; private set; }
 
-        public AggregateRoot(Guid id, string userId)
+        public long OriginalVersion { get; set; }
+
+        public long CurrentVersion { get; set; }
+
+        public ICollection<Event> Changes { get; private set; }
+
+        public AggregateRoot(string id, string userId)
         {
             Id = id;
 
             UserId = userId;
+
+            Changes = new HashSet<Event>();
         }
 
         protected AggregateRoot()
         {
-
+            Changes = new HashSet<Event>();
         }
 
-        /// <summary>
-        /// Id for item
-        /// </summary>
-        //public string Id { get; set; }
+        public void Replay(IEnumerable<Event> events)
+        {
+            foreach (var @event in events)
+            {
+                Replay(@event);
+            }
+        }
 
-        /// <summary>
-        /// Azure created at time stamp
-        /// </summary>
-        public DateTimeOffset CreatedAt { get; set; }
+        public void Replay(Event e)
+        {
+            Mutate(e);
 
-        /// <summary>
-        /// Azure UpdateAt timestamp for online/offline sync
-        /// </summary>
-        public DateTimeOffset UpdatedAt { get; set; }
+            OriginalVersion = e.Version;
 
-        /// <summary>
-        /// Azure version for online/offline sync
-        /// </summary>
-        public string AzureVersion { get; set; }
+            CurrentVersion = OriginalVersion;
+        }
+
+        protected void Apply(Event e)
+        {
+            Changes.Add(e);
+
+            Mutate(e);
+
+            CurrentVersion++;
+
+            e.Version = CurrentVersion;
+
+            e.Date = DateTime.Now;
+        }
+
+        protected void Mutate(Event e)
+        {
+            ((dynamic)this).When((dynamic)e);
+        }
+
+        public void OnSave()
+        {
+            OriginalVersion = CurrentVersion;
+        }
     }
 }
